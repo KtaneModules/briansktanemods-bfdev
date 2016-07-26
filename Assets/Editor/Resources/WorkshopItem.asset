@@ -13,8 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkshopPublishedFileID: 732091102
   Title: Twitch Chat Mod
-  Description: This uses the Twitch Chatter Asset from the Unity Asset Store in order
-    to provide an in game chat window.
+  Description: "This uses the Twitch Chatter Asset from the Unity Asset Store in order
+    to provide an in game chat window. This can help streamers keep in touch with
+    their audience without having to alt-tab or leave VR. \r\n\r\nTo select your channel
+    and to configure which scenes you want the chat window available for you will
+    need to edit the modSettings.json. \r\n\r\nYou can find this in your Steam installation
+    folder after subscribing, it will be located at this path: \r\n\r\nSteam\\steamapps\\workshop\\content\\341800\\732091102\\
+    \r\n\r\nTo get started you can just change this line: \r\n\r\n\"Channel\":null,
+    \r\n\r\nTo: \r\n\r\n\"Channel\": \"YOURCHANNELNAMEHERE\","
   PreviewImage: {fileID: 2800000, guid: f77e68458a9bb614cad20ee424b2931f, type: 3}
   Tags:
   - Other
