@@ -1,0 +1,133 @@
+﻿ INFO 2016-07-26 21:00:01,211 [Logging] Logging successfully configured from embedded logConfig asset.
+ INFO 2016-07-26 21:00:01,219 [Logging] Logging start.
+ INFO 2016-07-26 21:00:01,221 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\playerSettings.xml"...
+ INFO 2016-07-26 21:00:01,228 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\playerSettings.xml".
+DEBUG 2016-07-26 21:00:01,231 [Assets.Scripts.Settings.PlayerSettingsManager] PlayerSettings: InvertTiltControls: False, TouchpadInvert: False, RumbleEnabled: False, MusicVolume: 100, SFXVolume: 70, AntiAliasing: 0, VRModeRequested: True, SecondScreenMode: MirroredVR, VSync: 1, AccessibilitySettings: Empty, Empty, Empty, DisabledControlTypes: None
+DEBUG 2016-07-26 21:00:01,236 [KTInputManager] Requested settting control type to: Gaze
+DEBUG 2016-07-26 21:00:01,237 [KTInputManager] Control type not supported. Not changing control type.
+ INFO 2016-07-26 21:00:01,238 [KTInputManager] InControl Platform: WINDOWS 10 PRO 32BIT INTEL(R) CORE(TM) I7-6700K CPU @ 4.00GHZ (32682 MB)
+ INFO 2016-07-26 21:00:01,239 [KTInputManager] InControl Devices: 1
+ INFO 2016-07-26 21:00:01,240 [KTInputManager] PlayStation 4 Controller (PlayStation 4 Controller on Windows): Supported
+ INFO 2016-07-26 21:00:01,241 [KTInputManager] Active device: None () [Supported] [Platform: WINDOWS 10 PRO 32BIT INTEL(R) CORE(TM) I7-6700K CPU @ 4.00GHZ (32682 MB)]
+ INFO 2016-07-26 21:00:01,242 [KTInputManager] Active SecondScreen device: None () [Supported] [Platform: WINDOWS 10 PRO 32BIT INTEL(R) CORE(TM) I7-6700K CPU @ 4.00GHZ (32682 MB)]
+ INFO 2016-07-26 21:00:01,244 [Assets.Scripts.Settings.PlayerSettingsManager] Saving player settings.
+ INFO 2016-07-26 21:00:01,245 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to save "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\playerSettings.xml"...
+ INFO 2016-07-26 21:00:01,253 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully saved "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\playerSettings.xml".
+DEBUG 2016-07-26 21:00:01,255 [Assets.Scripts.Platform.PC.PCPlatformUtil] VRModeRequested: True
+ INFO 2016-07-26 21:00:01,256 [Assets.Scripts.Platform.PC.PCPlatformUtil] UnityEngine.VR.VRDevice.isPresent: False
+ INFO 2016-07-26 21:00:01,257 [Assets.Scripts.Platform.PC.PCPlatformUtil] No HMD detected. Falling back to non-VR mode.
+ INFO 2016-07-26 21:00:01,257 [Assets.Scripts.Platform.PC.PCPlatformUtil] Instantiating FixedCameraRig.
+ INFO 2016-07-26 21:00:01,380 [Assets.Scripts.Services.Steam.ServicesSteam] Steamworks.NET is initialized. Now logged in as Brian Fetter!
+DEBUG 2016-07-26 21:00:01,402 [SecondScreenInteractiveManual] Changing state from Loading to Loading
+ INFO 2016-07-26 21:00:01,404 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\demoSettings.xml"...
+ INFO 2016-07-26 21:00:01,406 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\demoSettings.xml".
+ INFO 2016-07-26 21:00:01,408 [Assets.Scripts.DemoManager] Demo settings: [Mode: Off], [DisableAlarmClockSound: False], [SkipVerificationFlow: False], [HideManualWebsiteReference: False], [ForgetLastGameSettings: False]
+DEBUG 2016-07-26 21:00:01,440 [SecondScreenManager] VRMode=false, disabling.
+ INFO 2016-07-26 21:00:01,441 [SecondScreenManager] SecondScreen mode changed from Disabled to Disabled
+ INFO 2016-07-26 21:00:03,745 [LoadingManager] Loading: mainScene
+ INFO 2016-07-26 21:00:03,867 [LoadingManager] Finished loading: 0.12 sec(s)
+DEBUG 2016-07-26 21:00:06,679 [LoadingManager] Received mouse input to continue, loading main scene.
+DEBUG 2016-07-26 21:00:06,684 [KTInputManager] Requested settting control type to: Mouse
+DEBUG 2016-07-26 21:00:06,687 [KTInputManager] Control type supported. Settting control type to: Mouse
+ INFO 2016-07-26 21:00:07,981 [Assets.Scripts.Progression.ProgressionManager] Loading progression data...
+ INFO 2016-07-26 21:00:07,983 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\progression.xml"...
+ INFO 2016-07-26 21:00:07,990 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\progression.xml".
+ INFO 2016-07-26 21:00:07,991 [Assets.Scripts.Progression.ProgressionManager] Progression summary:
+ INFO 2016-07-26 21:00:07,992 [Assets.Scripts.Progression.ProgressionManager] Last Unlocked Bomb Classification: 1
+ INFO 2016-07-26 21:00:07,993 [Assets.Scripts.Progression.ProgressionManager] MissionID: gameoverviewtutorial Beaten: True
+ INFO 2016-07-26 21:00:07,994 [Assets.Scripts.Progression.ProgressionManager] MissionID: controlstutorial Beaten: True
+ INFO 2016-07-26 21:00:07,995 [Assets.Scripts.Progression.ProgressionManager] MissionID: firsttime Beaten: True
+ INFO 2016-07-26 21:00:07,996 [Assets.Scripts.Progression.ProgressionManager] MissionID: freeplay Beaten: True
+ INFO 2016-07-26 21:00:07,997 [Assets.Scripts.Progression.ProgressionManager] Disarmed component: Wires
+ INFO 2016-07-26 21:00:07,998 [Assets.Scripts.Progression.ProgressionManager] Disarmed component: BigButton
+ INFO 2016-07-26 21:00:07,998 [Assets.Scripts.Progression.ProgressionManager] Disarmed component: Keypad
+ INFO 2016-07-26 21:00:07,999 [Assets.Scripts.Progression.ProgressionManager] Disarmed component: Mod
+ INFO 2016-07-26 21:00:08,002 [Assets.Scripts.Missions.MissionManager] MissionManager initialized. 34 missions available.
+ INFO 2016-07-26 21:00:08,003 [Assets.Scripts.Records.RecordManager] Loading records from records.xml...
+ INFO 2016-07-26 21:00:08,004 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\records.xml"...
+ INFO 2016-07-26 21:00:08,009 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\records.xml".
+ INFO 2016-07-26 21:00:08,011 [Assets.Scripts.Records.RecordManager] Loading best time records from best_times.xml...
+ INFO 2016-07-26 21:00:08,012 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\best_times.xml"...
+ INFO 2016-07-26 21:00:08,015 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\best_times.xml".
+ INFO 2016-07-26 21:00:08,016 [Assets.Scripts.Records.RecordManager] 47 recent records found:
+ WARN 2016-07-26 21:00:08,018 [Assets.Scripts.Missions.MissionManager] No mission with ID: mod_TwitchMod_mission found!
+ INFO 2016-07-26 21:00:08,019 [Assets.Scripts.Records.RecordManager] Record: 47 Mission: mod_TwitchMod_mission (invalid)
+ INFO 2016-07-26 21:00:08,020 [Assets.Scripts.Records.RecordManager] Record: 46 Mission: freeplay Result: ExplodedDueToStrikes Seed: 1232677119 Modules: 23 HasNeedy: False IsHardcore: False Solved: 3 TimeElapsed: 19.8851  RealTimeElapsed: 24.95871 Strikes: 3
+ INFO 2016-07-26 21:00:08,021 [Assets.Scripts.Records.RecordManager] Record: 45 Mission: freeplay Result: ExplodedDueToTime Seed: 958742318 Modules: 8 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0154  RealTimeElapsed: 308.0168 Strikes: 0
+ INFO 2016-07-26 21:00:08,022 [Assets.Scripts.Records.RecordManager] Record: 44 Mission: freeplay Result: Incomplete Seed: 1358399302 Modules: 8 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 0 Strikes: 0
+ INFO 2016-07-26 21:00:08,024 [Assets.Scripts.Records.RecordManager] Record: 43 Mission: freeplay Result: ExplodedDueToTime Seed: 2103544894 Modules: 8 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0007  RealTimeElapsed: 308.0191 Strikes: 0
+ INFO 2016-07-26 21:00:08,025 [Assets.Scripts.Records.RecordManager] Record: 42 Mission: freeplay Result: Defused Seed: 1555110635 Modules: 7 HasNeedy: False IsHardcore: False Solved: 7 TimeElapsed: 239.5295  RealTimeElapsed: 247.5688 Strikes: 0
+ INFO 2016-07-26 21:00:08,026 [Assets.Scripts.Records.RecordManager] Record: 41 Mission: freeplay Result: Defused Seed: 2034260944 Modules: 4 HasNeedy: False IsHardcore: False Solved: 4 TimeElapsed: 12.25626  RealTimeElapsed: 20.37023 Strikes: 0
+ INFO 2016-07-26 21:00:08,028 [Assets.Scripts.Records.RecordManager] Record: 40 Mission: freeplay Result: ExplodedDueToStrikes Seed: 2123366350 Modules: 10 HasNeedy: False IsHardcore: False Solved: 1 TimeElapsed: 276.7022  RealTimeElapsed: 210.4088 Strikes: 3
+ INFO 2016-07-26 21:00:08,030 [Assets.Scripts.Records.RecordManager] Record: 39 Mission: firsttime Result: ExplodedDueToTime Seed: 1029573984 Modules: 3 Solved: 0 TimeElapsed: 300.0157  RealTimeElapsed: 308.2006 Strikes: 0
+ INFO 2016-07-26 21:00:08,031 [Assets.Scripts.Records.RecordManager] Record: 38 Mission: firsttime Result: ExplodedDueToTime Seed: 2099734467 Modules: 3 Solved: 0 TimeElapsed: 300.0164  RealTimeElapsed: 308.0124 Strikes: 0
+ INFO 2016-07-26 21:00:08,032 [Assets.Scripts.Records.RecordManager] Record: 37 Mission: freeplay Result: ExplodedDueToTime Seed: 691890303 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0016  RealTimeElapsed: 308.0406 Strikes: 0
+ INFO 2016-07-26 21:00:08,034 [Assets.Scripts.Records.RecordManager] Record: 36 Mission: freeplay Result: ExplodedDueToTime Seed: 2096719807 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0008  RealTimeElapsed: 308.0135 Strikes: 0
+ INFO 2016-07-26 21:00:08,035 [Assets.Scripts.Records.RecordManager] Record: 35 Mission: freeplay Result: ExplodedDueToTime Seed: 489437916 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0153  RealTimeElapsed: 308.0205 Strikes: 0
+ INFO 2016-07-26 21:00:08,036 [Assets.Scripts.Records.RecordManager] Record: 34 Mission: freeplay Result: ExplodedDueToTime Seed: 2091858088 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0007  RealTimeElapsed: 308.0031 Strikes: 0
+ INFO 2016-07-26 21:00:08,037 [Assets.Scripts.Records.RecordManager] Record: 33 Mission: freeplay Result: ExplodedDueToTime Seed: 1629262317 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0155  RealTimeElapsed: 308.0114 Strikes: 0
+ INFO 2016-07-26 21:00:08,039 [Assets.Scripts.Records.RecordManager] Record: 32 Mission: freeplay Result: ExplodedDueToTime Seed: 1636940591 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 300.0153  RealTimeElapsed: 308.0164 Strikes: 0
+ INFO 2016-07-26 21:00:08,040 [Assets.Scripts.Records.RecordManager] Record: 31 Mission: firsttime Result: Defused Seed: 1120551189 Modules: 3 Solved: 3 TimeElapsed: 7.860962  RealTimeElapsed: 14.1451 Strikes: 2
+ INFO 2016-07-26 21:00:08,041 [Assets.Scripts.Records.RecordManager] Record: 30 Mission: firsttime Result: ExplodedDueToTime Seed: 1298345660 Modules: 3 Solved: 0 TimeElapsed: 300.0023  RealTimeElapsed: 307.9997 Strikes: 0
+ INFO 2016-07-26 21:00:08,043 [Assets.Scripts.Records.RecordManager] Record: 29 Mission: firsttime Result: Defused Seed: 1140865753 Modules: 3 Solved: 3 TimeElapsed: 21.14398  RealTimeElapsed: 27.2464 Strikes: 2
+ INFO 2016-07-26 21:00:08,044 [Assets.Scripts.Records.RecordManager] Record: 28 Mission: firsttime Result: Incomplete Seed: 1877906761 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 0 Strikes: 0
+ INFO 2016-07-26 21:00:08,045 [Assets.Scripts.Records.RecordManager] Record: 27 Mission: freeplay Result: ExplodedDueToStrikes Seed: 503005912 Modules: 5 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 12.1149  RealTimeElapsed: 19.97747 Strikes: 3
+ INFO 2016-07-26 21:00:08,046 [Assets.Scripts.Records.RecordManager] Record: 26 Mission: firsttime Result: ExplodedDueToStrikes Seed: 1855095407 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 5.457108 Strikes: 3
+ INFO 2016-07-26 21:00:08,047 [Assets.Scripts.Records.RecordManager] Record: 25 Mission: firsttime Result: ExplodedDueToStrikes Seed: 328574879 Modules: 3 Solved: 0 TimeElapsed: 49.00954  RealTimeElapsed: 56.87347 Strikes: 3
+ INFO 2016-07-26 21:00:08,049 [Assets.Scripts.Records.RecordManager] Record: 24 Mission: firsttime Result: ExplodedDueToStrikes Seed: 678624796 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 8.0242 Strikes: 3
+ INFO 2016-07-26 21:00:08,050 [Assets.Scripts.Records.RecordManager] Record: 23 Mission: firsttime Result: ExplodedDueToStrikes Seed: 1874633768 Modules: 3 Solved: 1 TimeElapsed: 0  RealTimeElapsed: 6.079597 Strikes: 3
+ INFO 2016-07-26 21:00:08,051 [Assets.Scripts.Records.RecordManager] Record: 22 Mission: freeplay Result: ExplodedDueToStrikes Seed: 432751313 Modules: 5 HasNeedy: False IsHardcore: False Solved: 1 TimeElapsed: 6.657684  RealTimeElapsed: 12.99751 Strikes: 3
+ INFO 2016-07-26 21:00:08,052 [Assets.Scripts.Records.RecordManager] Record: 21 Mission: freeplay Result: ExplodedDueToStrikes Seed: 817517631 Modules: 5 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 5.552902 Strikes: 3
+ INFO 2016-07-26 21:00:08,054 [Assets.Scripts.Records.RecordManager] Record: 20 Mission: firsttime Result: ExplodedDueToStrikes Seed: 2118071866 Modules: 3 Solved: 2 TimeElapsed: 0  RealTimeElapsed: 7.837067 Strikes: 3
+ INFO 2016-07-26 21:00:08,055 [Assets.Scripts.Records.RecordManager] Record: 19 Mission: firsttime Result: ExplodedDueToStrikes Seed: 1721399400 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 6.248734 Strikes: 3
+ INFO 2016-07-26 21:00:08,056 [Assets.Scripts.Records.RecordManager] Record: 18 Mission: firsttime Result: ExplodedDueToStrikes Seed: 343888836 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 4.209663 Strikes: 3
+ INFO 2016-07-26 21:00:08,057 [Assets.Scripts.Records.RecordManager] Record: 17 Mission: firsttime Result: ExplodedDueToStrikes Seed: 475617136 Modules: 3 Solved: 1 TimeElapsed: 0  RealTimeElapsed: 4.675644 Strikes: 3
+ INFO 2016-07-26 21:00:08,058 [Assets.Scripts.Records.RecordManager] Record: 16 Mission: firsttime Result: Defused Seed: 2117319013 Modules: 3 Solved: 3 TimeElapsed: 9.122772  RealTimeElapsed: 15.02831 Strikes: 2
+ INFO 2016-07-26 21:00:08,059 [Assets.Scripts.Records.RecordManager] Record: 15 Mission: freeplay Result: Defused Seed: 110247691 Modules: 5 HasNeedy: False IsHardcore: False Solved: 5 TimeElapsed: 36.00519  RealTimeElapsed: 32.01862 Strikes: 2
+ INFO 2016-07-26 21:00:08,061 [Assets.Scripts.Records.RecordManager] Record: 14 Mission: freeplay Result: ExplodedDueToStrikes Seed: 503763734 Modules: 5 HasNeedy: False IsHardcore: False Solved: 2 TimeElapsed: 153.1963  RealTimeElapsed: 145.3587 Strikes: 3
+ INFO 2016-07-26 21:00:08,062 [Assets.Scripts.Records.RecordManager] Record: 13 Mission: freeplay Result: ExplodedDueToStrikes Seed: 905765597 Modules: 3 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 1.834259  RealTimeElapsed: 9.654285 Strikes: 3
+ INFO 2016-07-26 21:00:08,063 [Assets.Scripts.Records.RecordManager] Record: 12 Mission: freeplay Result: ExplodedDueToStrikes Seed: 202770122 Modules: 5 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 6.932579 Strikes: 3
+ INFO 2016-07-26 21:00:08,066 [Assets.Scripts.Records.RecordManager] Record: 11 Mission: freeplay Result: ExplodedDueToStrikes Seed: 1427090705 Modules: 5 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 8.498047  RealTimeElapsed: 14.85542 Strikes: 3
+ INFO 2016-07-26 21:00:08,067 [Assets.Scripts.Records.RecordManager] Record: 10 Mission: freeplay Result: Incomplete Seed: 504831073 Modules: 5 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 0 Strikes: 0
+ INFO 2016-07-26 21:00:08,068 [Assets.Scripts.Records.RecordManager] Record: 9 Mission: freeplay Result: Defused Seed: 441907718 Modules: 3 HasNeedy: False IsHardcore: False Solved: 3 TimeElapsed: 16.89731  RealTimeElapsed: 24.96613 Strikes: 1
+ INFO 2016-07-26 21:00:08,069 [Assets.Scripts.Records.RecordManager] Record: 8 Mission: freeplay Result: ExplodedDueToStrikes Seed: 561751283 Modules: 7 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 16.2951  RealTimeElapsed: 21.02061 Strikes: 3
+ INFO 2016-07-26 21:00:08,071 [Assets.Scripts.Records.RecordManager] Record: 7 Mission: firsttime Result: Defused Seed: 340710042 Modules: 3 Solved: 3 TimeElapsed: 11.62436  RealTimeElapsed: 19.66866 Strikes: 0
+ INFO 2016-07-26 21:00:08,072 [Assets.Scripts.Records.RecordManager] Record: 6 Mission: freeplay Result: Incomplete Seed: 233113336 Modules: 6 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 0 Strikes: 0
+ INFO 2016-07-26 21:00:08,073 [Assets.Scripts.Records.RecordManager] Record: 5 Mission: freeplay Result: ExplodedDueToStrikes Seed: 146834624 Modules: 6 HasNeedy: False IsHardcore: False Solved: 0 TimeElapsed: 0  RealTimeElapsed: 3.798714 Strikes: 3
+ INFO 2016-07-26 21:00:08,074 [Assets.Scripts.Records.RecordManager] Record: 4 Mission: freeplay Result: ExplodedDueToStrikes Seed: 513720312 Modules: 10 HasNeedy: False IsHardcore: False Solved: 2 TimeElapsed: 20.35498  RealTimeElapsed: 24.27733 Strikes: 3
+ INFO 2016-07-26 21:00:08,076 [Assets.Scripts.Records.RecordManager] Record: 3 Mission: freeplay Result: Incomplete Seed: 1738625029 Modules: 10 HasNeedy: False IsHardcore: False Solved: 1 TimeElapsed: 0  RealTimeElapsed: 0 Strikes: 1
+ INFO 2016-07-26 21:00:08,077 [Assets.Scripts.Records.RecordManager] Record: 2 Mission: somethingoldsomethingnew Result: ExplodedDueToStrikes Seed: 1221579193 Modules: 3 Solved: 2 TimeElapsed: 35.07217  RealTimeElapsed: 35.53503 Strikes: 3
+ INFO 2016-07-26 21:00:08,078 [Assets.Scripts.Records.RecordManager] Record: 1 Mission: somethingoldsomethingnew Result: ExplodedDueToStrikes Seed: 1351518474 Modules: 3 Solved: 0 TimeElapsed: 0  RealTimeElapsed: 7.748772 Strikes: 3
+ INFO 2016-07-26 21:00:08,079 [Assets.Scripts.Records.RecordManager] Recent Record Summary: Success: 8 ExplodeDueToStrikes: 22 ExplodeDueToTime: 12
+ INFO 2016-07-26 21:00:08,080 [Assets.Scripts.Records.RecordManager] 2 Best Time records found:
+ INFO 2016-07-26 21:00:08,081 [Assets.Scripts.Records.RecordManager] Record: 21 Mission: firsttime Result: Defused Seed: 854555238 Modules: 3 Solved: 3 TimeElapsed: 1.591827  RealTimeElapsed: 9.157043 Strikes: 2
+ INFO 2016-07-26 21:00:08,082 [Assets.Scripts.Records.RecordManager] Record: 41 Mission: freeplay Result: Defused Seed: 2034260944 Modules: 4 HasNeedy: False IsHardcore: False Solved: 4 TimeElapsed: 12.25626  RealTimeElapsed: 20.37023 Strikes: 0
+ INFO 2016-07-26 21:00:08,084 [Assets.Scripts.Stats.StatsManager] Loading stats from stats.xml...
+ INFO 2016-07-26 21:00:08,085 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Attempting to load "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\stats.xml"...
+ INFO 2016-07-26 21:00:08,086 [Assets.Scripts.Platform.Common.IO.FileUtilityHelper] Successfully loaded "C:/Users/brianfetter/AppData/LocalLow/Steel Crate Games/Keep Talking and Nobody Explodes\stats.xml".
+ INFO 2016-07-26 21:00:08,092 [Assets.Scripts.Stats.StatsManager] Recorded Stats:
+ INFO 2016-07-26 21:00:08,093 [Assets.Scripts.Stats.StatsManager] moduletypeprogress: IntValue: 4
+ INFO 2016-07-26 21:00:08,094 [Assets.Scripts.Stats.StatsManager] totalstrikes: IntValue: 809
+ INFO 2016-07-26 21:00:08,094 [Assets.Scripts.Stats.StatsManager] totalmodulesdisarmed: IntValue: 449
+ INFO 2016-07-26 21:00:08,095 [Assets.Scripts.Stats.StatsManager] totalbombsexploded: IntValue: 199
+ INFO 2016-07-26 21:00:08,096 [Assets.Scripts.Stats.StatsManager] totalbombsdefused: IntValue: 63
+ INFO 2016-07-26 21:00:08,097 [Assets.Scripts.Stats.StatsManager] thebasicsprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,097 [Assets.Scripts.Stats.StatsManager] moderateprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,098 [Assets.Scripts.Stats.StatsManager] needyprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,099 [Assets.Scripts.Stats.StatsManager] challengingprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,100 [Assets.Scripts.Stats.StatsManager] extremeprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,100 [Assets.Scripts.Stats.StatsManager] exoticprogress: IntValue: 0
+ INFO 2016-07-26 21:00:08,101 [Assets.Scripts.Stats.StatsManager] Recorded Achievements:
+ INFO 2016-07-26 21:00:08,102 [Assets.Scripts.Stats.StatsManager] firstbomb: unlocked at 05/02/2016 13:58:02
+ INFO 2016-07-26 21:00:08,103 [SceneManager] Creating game states...
+DEBUG 2016-07-26 21:00:08,156 [MissionTableOfContentsPageManager] Showing ToC 0 page 0.
+DEBUG 2016-07-26 21:00:08,202 [PrefabOverride] Material override: InputBased: True, CurrentControlType: Mouse, Path: "PC/Materials/DossierMenu/MouseControls_Dossier"
+DEBUG 2016-07-26 21:00:08,204 [PrefabOverride] Material override: InputBased: True, CurrentControlType: Mouse, Path: "PC/Materials/DossierMenu/MouseControls_Dossier"
+DEBUG 2016-07-26 21:00:08,209 [PrefabOverride] Material override: InputBased: True, CurrentControlType: Mouse, Path: "PC/Materials/controls_poster_mouse"
+ INFO 2016-07-26 21:00:08,248 [Assets.Scripts.Services.Steam.ServicesSteam] Sent request to store stats to Steam.
+ INFO 2016-07-26 21:00:08,249 [SceneManager] Fading in...
+ INFO 2016-07-26 21:00:08,250 [State] Enter SetupState
+ INFO 2016-07-26 21:00:08,497 [Assets.Scripts.Services.Steam.ServicesSteam] Received user stats from Steam for game id 341800
+ INFO 2016-07-26 21:00:08,502 [Assets.Scripts.Services.Steam.ServicesSteam] Steam achievement id 100modulesdisarmed was unlocked remotely but is not unlocked locally. Recording unlock locally...
+ INFO 2016-07-26 21:00:08,506 [Assets.Scripts.Services.Steam.ServicesSteam] Finished merging existing stats and achievements
+ INFO 2016-07-26 21:00:08,508 [Assets.Scripts.Services.Steam.ServicesSteam] Sent request to store stats to Steam.

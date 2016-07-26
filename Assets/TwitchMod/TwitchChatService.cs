@@ -15,17 +15,21 @@ public class TwitchChatService : MonoBehaviour
         public float ChatRotationZ = 0f;
         public float ChatScale = 0.002644618f;
         public string Channel;
+        public bool ShowInSetupRoom = true;
+        public bool ShowInGameplayRoom = true;
+        public bool ShowInPostGame = true;
     }
 
     public GameObject TwitchChatterPrefab;
     public GameObject TwitchChatterGO;
+    Settings settings;
 
     void Awake()
     {
-        Settings settings2 = new Settings();
-        Debug.Log(JsonConvert.SerializeObject(settings2));
+        //Settings settings2 = new Settings();
+        //Debug.Log(JsonConvert.SerializeObject(settings2));
 
-        Settings settings = HandleSettings();
+        settings = HandleSettings();
 
         TwitchChatterGO = Instantiate(TwitchChatterPrefab);
         TwitchChatterGO.transform.position = new Vector3(settings.ChatPositionX, settings.ChatPositionY, settings.ChatPositionZ) ;
@@ -40,7 +44,9 @@ public class TwitchChatService : MonoBehaviour
 
     void OnStateChange(KMGameInfo.State newState)
     {
-        if(newState == KMGameInfo.State.Gameplay || newState == KMGameInfo.State.Setup || newState == KMGameInfo.State.PostGame)
+        if((newState == KMGameInfo.State.Gameplay && settings.ShowInGameplayRoom)
+            || (newState == KMGameInfo.State.Setup && settings.ShowInSetupRoom)
+            || (newState == KMGameInfo.State.PostGame && settings.ShowInPostGame))
         {
             TwitchChatterGO.SetActive(true);
         }

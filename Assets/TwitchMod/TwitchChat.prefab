@@ -64,9 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: -289456416, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings: "{ \t\"ChatPositionX\": -1.148, \t\"ChatPositionY\": 1.114, \t\"ChatPositionZ\":
-    -0.869, \t\"ChatRotationX\": 0.0, \t\"ChatRotationY\": -61.296, \t\"ChatRotationZ\":
-    0.0, \t\"ChatScale\": 0.002644618, \t\"Channel\": \"rocketbeanstv\" }"
+  Settings: 
 --- !u!114 &11447060
 MonoBehaviour:
   m_ObjectHideFlags: 1

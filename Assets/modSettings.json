@@ -6,5 +6,8 @@
 	"ChatRotationY": -61.296,
 	"ChatRotationZ": 0.0,
 	"ChatScale": 0.002644618,
-	"Channel": null
+	"Channel": null,
+	"ShowInSetupRoom": true,
+	"ShowInGameplayRoom": true,
+	"ShowInPostGame": true
 }
