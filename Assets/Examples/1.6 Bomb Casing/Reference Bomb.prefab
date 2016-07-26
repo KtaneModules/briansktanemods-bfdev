@@ -95,14 +95,14 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &100012
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
   m_Layer: 0
-  m_Name: VisualTransform (1)
+  m_Name: TopBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,8 +163,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400024}
-  - 114: {fileID: 11481424}
-  - 114: {fileID: 11404248}
   m_Layer: 0
   m_Name: RearFace
   m_TagString: Untagged
@@ -180,8 +178,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400028}
-  - 114: {fileID: 11479416}
-  - 114: {fileID: 11493052}
   m_Layer: 0
   m_Name: FrontFace
   m_TagString: Untagged
@@ -2431,7 +2427,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434980}
-  - {fileID: 400012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400012
@@ -2463,8 +2458,8 @@ Transform:
   - {fileID: 400018}
   - {fileID: 400042}
   - {fileID: 426076}
-  m_Father: {fileID: 400010}
-  m_RootOrder: 1
+  m_Father: {fileID: 434980}
+  m_RootOrder: 19
 --- !u!4 &400014
 Transform:
   m_ObjectHideFlags: 1
@@ -3729,6 +3724,7 @@ Transform:
   - {fileID: 407100}
   - {fileID: 412068}
   - {fileID: 484554}
+  - {fileID: 400012}
   m_Father: {fileID: 400010}
   m_RootOrder: 0
 --- !u!4 &435650
@@ -6234,24 +6230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackingDeep: {fileID: 191124}
   BackingNormal: {fileID: 196808}
---- !u!114 &11404248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1702003387, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Parent: {fileID: 11427546}
-  Children: []
-  IsPassThrough: 1
-  ChildRowLength: 3
-  Highlight: {fileID: 0}
-  SelectableArea: {fileID: 0}
-  DefaultSelectableIndex: 0
 --- !u!114 &11404734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6303,6 +6281,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anchors:
+  - {fileID: 400040}
+  - {fileID: 400038}
+  - {fileID: 400036}
+  - {fileID: 400034}
+  - {fileID: 400032}
+  - {fileID: 400030}
   - {fileID: 479108}
   - {fileID: 422718}
   - {fileID: 457704}
@@ -6310,6 +6294,12 @@ MonoBehaviour:
   - {fileID: 473422}
   - {fileID: 433200}
   Backings:
+  - {fileID: 11451168}
+  - {fileID: 11455602}
+  - {fileID: 11401960}
+  - {fileID: 11404734}
+  - {fileID: 11407080}
+  - {fileID: 11491722}
   - {fileID: 11478266}
   - {fileID: 11458764}
   - {fileID: 11464710}
@@ -6341,6 +6331,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anchors:
+  - {fileID: 400016}
+  - {fileID: 400006}
+  - {fileID: 400008}
+  - {fileID: 400000}
+  - {fileID: 400004}
+  - {fileID: 400002}
   - {fileID: 471228}
   - {fileID: 401686}
   - {fileID: 466110}
@@ -6348,6 +6344,12 @@ MonoBehaviour:
   - {fileID: 440940}
   - {fileID: 416306}
   Backings:
+  - {fileID: 11450810}
+  - {fileID: 11423038}
+  - {fileID: 11469484}
+  - {fileID: 11477734}
+  - {fileID: 11459472}
+  - {fileID: 11400156}
   - {fileID: 11440902}
   - {fileID: 11485768}
   - {fileID: 11427390}
@@ -6604,7 +6606,7 @@ MonoBehaviour:
   - {fileID: 100054}
   - {fileID: 100044}
   visualTransform: {fileID: 434980}
-  Scale: 0.74
+  Scale: 0.5
   IsHoldable: 1
 --- !u!114 &11473416
 MonoBehaviour:
@@ -6650,56 +6652,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackingDeep: {fileID: 151028}
   BackingNormal: {fileID: 125966}
---- !u!114 &11479416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1139198742, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Anchors:
-  - {fileID: 400040}
-  - {fileID: 400038}
-  - {fileID: 400036}
-  - {fileID: 400034}
-  - {fileID: 400032}
-  - {fileID: 400030}
-  Backings:
-  - {fileID: 11451168}
-  - {fileID: 11455602}
-  - {fileID: 11401960}
-  - {fileID: 11404734}
-  - {fileID: 11407080}
-  - {fileID: 11491722}
---- !u!114 &11481424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1139198742, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Anchors:
-  - {fileID: 400016}
-  - {fileID: 400006}
-  - {fileID: 400008}
-  - {fileID: 400000}
-  - {fileID: 400004}
-  - {fileID: 400002}
-  Backings:
-  - {fileID: 11450810}
-  - {fileID: 11423038}
-  - {fileID: 11469484}
-  - {fileID: 11477734}
-  - {fileID: 11459472}
-  - {fileID: 11400156}
 --- !u!114 &11485768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6739,24 +6691,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackingDeep: {fileID: 147310}
   BackingNormal: {fileID: 164656}
---- !u!114 &11493052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1702003387, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Parent: {fileID: 11427546}
-  Children: []
-  IsPassThrough: 1
-  ChildRowLength: 3
-  Highlight: {fileID: 0}
-  SelectableArea: {fileID: 0}
-  DefaultSelectableIndex: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

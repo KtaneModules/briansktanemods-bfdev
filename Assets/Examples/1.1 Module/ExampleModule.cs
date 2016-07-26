@@ -13,6 +13,7 @@ public class ExampleModule : MonoBehaviour
 
     void Init()
     {
+        Debug.Log("test");
         correctIndex = Random.Range(0, 4);
 
         for(int i = 0; i < buttons.Length; i++)
