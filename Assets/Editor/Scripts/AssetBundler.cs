@@ -41,7 +41,6 @@ public class AssetBundler
     /// </summary>
     public static string BUNDLE_FILENAME = "mod.bundle";
 
-
     #region Internal bundler Variables
     /// <summary>
     /// The name of the mod's main assembly
@@ -118,6 +117,9 @@ public class AssetBundler
             //Create the modInfo.json file
             bundler.CreateModInfo();
 
+            //Create modSettings.json file
+            bundler.CreateModSettings();
+
             //Lastly, create the asset bundle itself and copy it to the output folder
             bundler.CreateAssetBundle();
 
@@ -175,7 +177,7 @@ public class AssetBundler
         }
 
         //modify the csproj (if needed)
-        var csproj = File.ReadAllText("ktanemodkit.CSharp.csproj");
+        var csproj = File.ReadAllText("briansktanemods.CSharp.csproj");
         csproj = csproj.Replace("<AssemblyName>Assembly-CSharp</AssemblyName>", "<AssemblyName>"+ assemblyName + "</AssemblyName>");
         File.WriteAllText("modkithelper.CSharp.csproj", csproj);
 
@@ -380,6 +382,17 @@ public class AssetBundler
     protected void CreateModInfo()
     {
         File.WriteAllText(outputFolder + "/modInfo.json", ModConfig.Instance.ToJson());
+    }
+
+    /// <summary>
+    /// Creates a modSettings.json file and puts it in the OUTPUT_FOLDER for configurable mods
+    /// </summary>
+    protected void CreateModSettings()
+    {
+        if(File.Exists("Assets/modSettings.json"))
+        {
+            File.Copy("Assets/modSettings.json", outputFolder + "/modSettings.json");
+        }
     }
 
     /// <summary>

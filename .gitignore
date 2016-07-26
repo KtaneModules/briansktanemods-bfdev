@@ -30,3 +30,7 @@ sysinfo.txt
 Assets/Generated
 Gen
 
+/Assets/TwitchChatter
+/Assets/TwitchChatter.meta
+/Assets/Plugins/Managed/TwitchChatter.dll.meta
+/Assets/Plugins/Managed/TwitchChatter.dll
