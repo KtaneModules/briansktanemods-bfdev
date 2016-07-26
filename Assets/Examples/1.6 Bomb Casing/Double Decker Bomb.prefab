@@ -87,7 +87,7 @@ GameObject:
   - 114: {fileID: 11472264}
   - 114: {fileID: 11427546}
   m_Layer: 0
-  m_Name: Reference Bomb
+  m_Name: Double Decker Bomb
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,7 +1303,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422718}
   m_Layer: 0
-  m_Name: Component2Anchor
+  m_Name: Component8Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1335,7 +1335,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416306}
   m_Layer: 0
-  m_Name: Component6Anchor
+  m_Name: Component12Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,7 +1402,7 @@ GameObject:
   - 4: {fileID: 464452}
   - 114: {fileID: 11440902}
   m_Layer: 0
-  m_Name: Backing_B1
+  m_Name: Backing_B7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1435,7 +1435,7 @@ GameObject:
   - 4: {fileID: 453148}
   - 114: {fileID: 11458764}
   m_Layer: 0
-  m_Name: Backing_F2
+  m_Name: Backing_F8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,7 +1530,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458196}
   m_Layer: 0
-  m_Name: Component4Anchor
+  m_Name: Component10Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1579,7 +1579,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480512}
   m_Layer: 0
-  m_Name: Component4Anchor
+  m_Name: Component10Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1626,7 +1626,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457704}
   m_Layer: 0
-  m_Name: Component3Anchor
+  m_Name: Component9Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1724,7 +1724,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 433200}
   m_Layer: 0
-  m_Name: Component6Anchor
+  m_Name: Component12Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1808,7 +1808,7 @@ GameObject:
   - 4: {fileID: 490562}
   - 114: {fileID: 11442980}
   m_Layer: 0
-  m_Name: Backing_B5
+  m_Name: Backing_B11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1824,7 +1824,7 @@ GameObject:
   - 4: {fileID: 486916}
   - 114: {fileID: 11437882}
   m_Layer: 0
-  m_Name: Backing_B4
+  m_Name: Backing_B10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,7 +1856,7 @@ GameObject:
   - 4: {fileID: 432358}
   - 114: {fileID: 11464710}
   m_Layer: 0
-  m_Name: Backing_F3
+  m_Name: Backing_F9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1872,7 +1872,7 @@ GameObject:
   - 4: {fileID: 400088}
   - 114: {fileID: 11403318}
   m_Layer: 0
-  m_Name: Backing_F4
+  m_Name: Backing_F10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,7 +1920,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 479108}
   m_Layer: 0
-  m_Name: Component1Anchor
+  m_Name: Component7Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +1953,7 @@ GameObject:
   - 4: {fileID: 431012}
   - 114: {fileID: 11485768}
   m_Layer: 0
-  m_Name: Backing_B2
+  m_Name: Backing_B8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1985,7 +1985,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 440940}
   m_Layer: 0
-  m_Name: Component5Anchor
+  m_Name: Component11Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2000,7 +2000,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 471228}
   m_Layer: 0
-  m_Name: Component1Anchor
+  m_Name: Component7Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2033,7 +2033,7 @@ GameObject:
   - 4: {fileID: 474876}
   - 114: {fileID: 11478266}
   m_Layer: 0
-  m_Name: Backing_F1
+  m_Name: Backing_F7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2049,7 +2049,7 @@ GameObject:
   - 4: {fileID: 403560}
   - 114: {fileID: 11427390}
   m_Layer: 0
-  m_Name: Backing_B3
+  m_Name: Backing_B9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2080,7 +2080,7 @@ GameObject:
   - 4: {fileID: 448988}
   - 114: {fileID: 11492050}
   m_Layer: 0
-  m_Name: Backing_F6
+  m_Name: Backing_F12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2113,7 +2113,7 @@ GameObject:
   - 4: {fileID: 498808}
   - 114: {fileID: 11462280}
   m_Layer: 0
-  m_Name: Backing_F5
+  m_Name: Backing_F11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2128,7 +2128,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473422}
   m_Layer: 0
-  m_Name: Component5Anchor
+  m_Name: Component11Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2302,7 +2302,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 466110}
   m_Layer: 0
-  m_Name: Component3Anchor
+  m_Name: Component9Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2335,7 +2335,7 @@ GameObject:
   - 4: {fileID: 456940}
   - 114: {fileID: 11436210}
   m_Layer: 0
-  m_Name: Backing_B6
+  m_Name: Backing_B12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,7 +2350,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401686}
   m_Layer: 0
-  m_Name: Component2Anchor
+  m_Name: Component8Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2436,7 +2436,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.45}
+  m_LocalPosition: {x: 0, y: 0, z: 0.469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400150}
@@ -3628,7 +3628,7 @@ Transform:
   m_GameObject: {fileID: 141080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.02, z: 0}
-  m_LocalScale: {x: 1.0523607, y: 1.0919529, z: 0.97}
+  m_LocalScale: {x: 1.0523607, y: 2.1, z: 0.97}
   m_Children: []
   m_Father: {fileID: 488594}
   m_RootOrder: 0
@@ -3702,7 +3702,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488594}
@@ -4160,8 +4160,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0.228}
+  m_LocalScale: {x: 1, y: 1, z: 1.9028972}
   m_Children: []
   m_Father: {fileID: 434980}
   m_RootOrder: 18
