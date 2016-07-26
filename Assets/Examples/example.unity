@@ -166,12 +166,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11437142, guid: a9dc123b792f0a44fb3b8510ba40930b, type: 2}
-      propertyPath: Settings
-      value: "{ \t\"ChatPositionX\": -1.148, \t\"ChatPositionY\": 1.114, \t\"ChatPositionZ\":
-        -0.869, \t\"ChatRotationX\": 0.0, \t\"ChatRotationY\": -61.296, \t\"ChatRotationZ\":
-        0.0, \t\"ChatScale\": 0.002644618, \t\"Channel\": \"rocketbeanstv\" }"
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9dc123b792f0a44fb3b8510ba40930b, type: 2}
   m_IsPrefabParent: 0
