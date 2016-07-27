@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading;
 using System;
 
-public class ExampleWebService : MonoBehaviour
+public class CompetitiveServer : MonoBehaviour
 {
     KMBombInfo bombInfo;
     KMGameCommands gameCommands;
@@ -34,7 +34,7 @@ public class ExampleWebService : MonoBehaviour
 
     void Update()
     {
-        if(actions.Count > 0)
+        if (actions.Count > 0)
         {
             Action action = actions.Dequeue();
             action();
@@ -64,6 +64,7 @@ public class ExampleWebService : MonoBehaviour
             HttpListenerRequest request = context.Request;
             // Obtain a response object.
             HttpListenerResponse response = context.Response;
+            response.AddHeader("Access-Control-Allow-Origin", "*");
             // Construct a response.
             string responseString = "";
 
@@ -111,14 +112,14 @@ public class ExampleWebService : MonoBehaviour
 
     protected string GetBombInfo()
     {
-        if(bombInfo.IsBombPresent())
+        if (bombInfo.IsBombPresent())
         {
-            if(bombState == "NA")
+            if (bombState == "NA")
             {
                 bombState = "Active";
             }
         }
-        else if(bombState == "Active")
+        else if (bombState == "Active")
         {
             bombState = "NA";
         }
@@ -128,15 +129,15 @@ public class ExampleWebService : MonoBehaviour
         modules = GetListAsHTML(bombInfo.GetModuleNames());
         solvableModules = GetListAsHTML(bombInfo.GetSolvableModuleNames());
         solvedModules = GetListAsHTML(bombInfo.GetSolvedModuleNames());
-        
+
         string responseString = string.Format(
+
             "<span>Time: {0}</span><br>"
             + "<span>Strikes: {1}</span><br>"
             + "<span>Modules: {2}</span><br>"
             + "<span>Solvable Modules: {3}</span><br>"
             + "<span>Solved Modules: {4}</span><br>"
-            + "<span>State: {5}</span><br>"
-            +  time, strikes, modules, solvableModules, solvedModules, bombState);
+            + "<span>State: {5}</span><br>", time, strikes, modules, solvableModules, solvedModules, bombState);
 
         return responseString;
     }
@@ -155,7 +156,7 @@ public class ExampleWebService : MonoBehaviour
     {
         string listString = "";
 
-        foreach(string s in list)
+        foreach (string s in list)
         {
             listString += s + ", ";
         }
@@ -165,9 +166,9 @@ public class ExampleWebService : MonoBehaviour
 
     public class Worker
     {
-        ExampleWebService service;
+        CompetitiveServer service;
 
-        public Worker(ExampleWebService s)
+        public Worker(CompetitiveServer s)
         {
             service = s;
         }
