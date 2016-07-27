@@ -54,6 +54,7 @@
 						Seed:
 					</label>
 					<input class="input-lg" id="seed" value="1234"></input>
+					<button id="random">Random</button>
 					<br>
 					<br>
 					<button type="button" class="btn btn-default" id="startMission">
@@ -65,20 +66,21 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="computer1IP">
-									Computer #2 IP:PORT
+									Computer #1 IP:PORT
 								</label>
 								<input type="text" class="form-control" id="computer1IP" value="localhost:8085"/>
+								<span id="status1"></span>
 							</div>
 							<div id="bombInfo1">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								 
 								<label for="computer2IP">
 									Computer #2 IP:PORT
 								</label>
 								<input type="text" class="form-control" id="computer2IP"/>
+								<span id="status2"></span>
 							</div>
 							<div id="bombInfo2">
 							</div>

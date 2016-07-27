@@ -123,6 +123,8 @@ public class AssetBundler
             //Create the modInfo.json file
             bundler.CreateModInfo();
 
+            bundler.CreateModSettings();
+
             //Lastly, create the asset bundle itself and copy it to the output folder
             bundler.CreateAssetBundle();
 
@@ -385,6 +387,11 @@ public class AssetBundler
     protected void CreateModInfo()
     {
         File.WriteAllText(outputFolder + "/modInfo.json", ModConfig.Instance.ToJson());
+    }
+
+    protected void CreateModSettings()
+    {
+        File.Copy("Assets/modSettings.json", outputFolder + "/modSettings.json");
     }
 
     /// <summary>

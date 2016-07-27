@@ -12,7 +12,7 @@ function startMission()
 		$.ajax({
 		  url: "http://" + computer1IP + "/startMission?missionId=" + missionId + "&seed=" + seed
 		}).done(function(data) {
-			startPolling(1);
+
 		});
 	}
 	
@@ -33,9 +33,16 @@ function startPolling(num)
 		{
 			var ip = $("#computer" + num + "IP").val();
 			$.ajax({
-			  url: "http://" + ip + "/bombInfo"
+			  url: "http://" + ip + "/bombInfo",
+			  dataType: "json"
 			}).done(function(data) {
-				$("#bombInfo" + num).html(data);
+				$("#bombInfo" + num).html(handleBombInfo(data));
+				$("#status" + num).attr("style","color:green");
+				$("#status" + num).text("connected");
+			}).fail(function() {
+				$("#status" + num).attr("style","color:red");
+				$("#status" + num).text("not connected");
+			}).always(function() {
 				startPolling(num);
 			});
 		},
@@ -43,7 +50,42 @@ function startPolling(num)
 	);
 }
 
+function handleBombInfo(bombInfo)
+{
+	if(bombInfo['BombState'] == 'Active')
+	{
+		var modulesRemaining = bombInfo['SolvableModules'].length - bombInfo['SolvedModules'].length;
+		var html = "";
+		html += "Time : " + bombInfo['Time'] + "<br>";
+		html += "Strikes : " + bombInfo['Time'] + "<br>";
+		html += "Modules Remaining: " + modulesRemaining + "<br>";
+		return html;
+	}
+	else if(bombInfo['BombState'] == 'NA')
+	{
+		return "<span>No Bomb</span>"
+	}
+	else if(bombInfo['BombState'] == 'Defused')
+	{
+		var html = "<h1 style='color:blue'>Defused</h1>";
+		html += "<br><span>Time Remaining: " + bombInfo['Time'] + "</span>";
+		
+		return html;
+	}
+	else if(bombInfo['BombState'] == 'Exploded')
+	{
+		return "<h1 style='color:red'>Exploded</h1>"
+	}
+}
+
+function randomizeSeed()
+{
+	$("#seed").val(Math.floor((Math.random() * 60000) + 1));
+}
 
 $(document).ready(function(){
+	startPolling(1);
+	startPolling(2);
+	$("#random").click(randomizeSeed);
 	$("#startMission").click(startMission);
 });

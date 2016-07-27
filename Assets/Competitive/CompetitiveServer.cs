@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System;
+using Newtonsoft.Json;
 
 public class CompetitiveServer : MonoBehaviour
 {
@@ -12,24 +13,68 @@ public class CompetitiveServer : MonoBehaviour
     string solvableModules;
     string solvedModules;
     string bombState;
+    public Settings ModSettings;
 
     Thread workerThread;
 
     Queue<Action> actions;
 
+    public class Settings
+    {
+        public int Port = 8085;
+    }
+
+    public class BombInfoResponse
+    {
+        public string Time;
+        public int Strikes;
+        public List<string> Modules;
+        public List<string> SolvableModules;
+        public List<string> SolvedModules;
+        public string BombState;
+
+        public static BombInfoResponse GetResponse(KMBombInfo bombInfo, string bombState)
+        {
+            BombInfoResponse response = new BombInfoResponse();
+
+            response.Time = bombInfo.GetFormattedTime();
+            response.Strikes = bombInfo.GetStrikes();
+            response.Modules = bombInfo.GetModuleNames();
+            response.SolvableModules = bombInfo.GetSolvableModuleNames();
+            response.SolvedModules = bombInfo.GetSolvedModuleNames();
+            response.BombState = bombState;
+
+            return response;
+        }
+    }
+
     void Awake()
     {
+        ModSettings = JsonConvert.DeserializeObject<Settings>(GetComponent<KMModSettings>().Settings);
         actions = new Queue<Action>();
         bombInfo = GetComponent<KMBombInfo>();
         bombInfo.OnBombExploded += OnBombExplodes;
         bombInfo.OnBombSolved += OnBombDefused;
         gameCommands = GetComponent<KMGameCommands>();
+        GetComponent<KMGameInfo>().OnStateChange += OnGameStateChange;
         bombState = "NA";
         // Create the thread object. This does not start the thread.
         Worker workerObject = new Worker(this);
         workerThread = new Thread(workerObject.DoWork);
         // Start the worker thread.
         workerThread.Start(this);
+    }
+
+    protected void OnGameStateChange(KMGameInfo.State state)
+    {
+        if(state == KMGameInfo.State.Gameplay)
+        {
+            bombState = "Active";
+        }
+        else if(bombState == "Active")
+        {
+            bombState = "NA";
+        }
     }
 
     void Update()
@@ -112,32 +157,7 @@ public class CompetitiveServer : MonoBehaviour
 
     protected string GetBombInfo()
     {
-        if (bombInfo.IsBombPresent())
-        {
-            if (bombState == "NA")
-            {
-                bombState = "Active";
-            }
-        }
-        else if (bombState == "Active")
-        {
-            bombState = "NA";
-        }
-
-        string time = bombInfo.GetFormattedTime();
-        int strikes = bombInfo.GetStrikes();
-        modules = GetListAsHTML(bombInfo.GetModuleNames());
-        solvableModules = GetListAsHTML(bombInfo.GetSolvableModuleNames());
-        solvedModules = GetListAsHTML(bombInfo.GetSolvedModuleNames());
-
-        string responseString = string.Format(
-
-            "<span>Time: {0}</span><br>"
-            + "<span>Strikes: {1}</span><br>"
-            + "<span>Modules: {2}</span><br>"
-            + "<span>Solvable Modules: {3}</span><br>"
-            + "<span>Solved Modules: {4}</span><br>"
-            + "<span>State: {5}</span><br>", time, strikes, modules, solvableModules, solvedModules, bombState);
+        string responseString = JsonConvert.SerializeObject(BombInfoResponse.GetResponse(bombInfo, bombState));
 
         return responseString;
     }
@@ -176,7 +196,7 @@ public class CompetitiveServer : MonoBehaviour
         // This method will be called when the thread is started. 
         public void DoWork()
         {
-            service.SimpleListenerExample(new string[] { "http://localhost:8085/" });
+            service.SimpleListenerExample(new string[] { "http://localhost:" + service.ModSettings.Port + "/" });
         }
     }
 }
