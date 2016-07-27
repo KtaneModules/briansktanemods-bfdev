@@ -196,7 +196,7 @@ public class CompetitiveServer : MonoBehaviour
         // This method will be called when the thread is started. 
         public void DoWork()
         {
-            service.SimpleListenerExample(new string[] { "http://localhost:" + service.ModSettings.Port + "/" });
+            service.SimpleListenerExample(new string[] { "http://*:" + service.ModSettings.Port + "/"});
         }
     }
 }
