@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf2299c8864afe4ab42466f546ae20d, type: 3}
   m_Name: WorkshopItem
   m_EditorClassIdentifier: 
-  WorkshopPublishedFileID: 0
+  WorkshopPublishedFileID: 731908781
   Title: The Double Decker
-  Description: 
+  Description: "This terrifying bomb supports up to 23 modules.\r\n\r\nCan it be defused?\r\n\r\nShould
+    you even try?\r\n\r\nI don't really know."
   PreviewImage: {fileID: 0}
-  Tags: []
+  Tags:
+  - Bomb Casing
