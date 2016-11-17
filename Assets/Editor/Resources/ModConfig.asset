@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: CompetitiveMode
   title: Competitive Mode
-  version: 0.1
+  version: 0.2
   outputFolder: build
