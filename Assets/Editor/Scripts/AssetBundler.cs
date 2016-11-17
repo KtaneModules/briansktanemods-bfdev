@@ -107,6 +107,9 @@ public class AssetBundler
             //Change all non-Editor scripts to reference ASSEMBLY_NAME instead of Assembly-CSharp
             bundler.AdjustMonoScripts();
 
+            //Update material info components for future compatibility checks
+            bundler.UpdateMaterialInfo();
+
             //Build the assembly using either MSBuild or Unity EditorUtility methods
             if (useMSBuild)
             {
@@ -123,7 +126,11 @@ public class AssetBundler
             //Create the modInfo.json file
             bundler.CreateModInfo();
 
-            bundler.CreateModSettings();
+            //Copy the modSettings.json file from Assets into the build
+            bundler.CopyModSettings();
+
+            //Copy PDF manual pages to Manual folder in build
+            bundler.CopyManual();
 
             //Lastly, create the asset bundle itself and copy it to the output folder
             bundler.CreateAssetBundle();
@@ -231,17 +238,62 @@ public class AssetBundler
             .Select(path => "Assets/Plugins/Managed/" + Path.GetFileNameWithoutExtension(path))
             .ToList();
 
-        managedReferences.Add("Library/UnityAssemblies/UnityEngine");
-
-        var compilerOutput = EditorUtility.CompileCSharp(
-            scriptAssetPaths.ToArray(),
-            managedReferences.ToArray(),
-            allDefines.Split(';'),
-            outputFilename);
-
-        foreach (var log in compilerOutput)
+        string unityAssembliesLocation;
+        switch (System.Environment.OSVersion.Platform)
         {
-            Debug.LogFormat("Compiler: {0}", log);
+            case PlatformID.MacOSX:
+            case PlatformID.Unix:
+                unityAssembliesLocation = EditorApplication.applicationPath.Replace("Unity.app", "Unity.app/Contents/Frameworks/Managed/");
+                break;
+            case PlatformID.Win32NT:
+            default:
+                unityAssembliesLocation = EditorApplication.applicationPath.Replace("Unity.exe", "Data/Managed/");
+                break;
+        }
+
+        managedReferences.Add(unityAssembliesLocation + "UnityEngine");
+
+        //Next we need to grab some type references and use reflection to build things the way Unity does.
+        //Note that EditorUtility.CompileCSharp will do *almost* exactly the same thing, but it unfortunately
+        //defaults to "unity" rather than "2.0" when selecting the .NET support for the classlib_profile.
+
+        string[] scriptArray = scriptAssetPaths.ToArray();
+        string[] referenceArray = managedReferences.ToArray();
+        string[] defineArray = allDefines.Split(';');
+
+        //MonoIsland to compile
+        string classlib_profile = "2.0";
+        Assembly assembly = Assembly.GetAssembly(typeof(MonoScript));
+        var monoIslandType = assembly.GetType("UnityEditor.Scripting.MonoIsland");
+        object monoIsland = Activator.CreateInstance(monoIslandType, BuildTarget.StandaloneWindows, classlib_profile, scriptArray, referenceArray, defineArray, outputFilename);
+
+        //MonoCompiler itself
+        var monoCompilerType = assembly.GetType("UnityEditor.Scripting.Compilers.MonoCSharpCompiler");
+        object monoCompiler = Activator.CreateInstance(monoCompilerType, monoIsland, false);
+
+        MethodInfo beginCompilingMethod = monoCompilerType.GetMethod("BeginCompiling");
+        MethodInfo pollMethod = monoCompilerType.GetMethod("Poll");
+        MethodInfo getMessagesMethod = monoCompilerType.GetMethod("GetCompilerMessages");
+
+        //CompilerMessage
+        var compilerMessageType = assembly.GetType("UnityEditor.Scripting.Compilers.CompilerMessage");
+        FieldInfo messageField = compilerMessageType.GetField("message"); 
+
+        //Start compiling
+        beginCompilingMethod.Invoke(monoCompiler, null);
+        while (!(bool)pollMethod.Invoke(monoCompiler, null))
+        {
+            System.Threading.Thread.Sleep(50);
+        }
+
+        //Now check and output any messages returned by the compiler
+        object returnedObj = getMessagesMethod.Invoke(monoCompiler, null);
+        object[] cmArray = ((Array)returnedObj).Cast<object>().ToArray();
+
+        foreach (object cm in cmArray)
+        {
+            string str = (string)messageField.GetValue(cm);
+            Debug.LogFormat("Compiler: {0}", str);
         }
 
         if (!File.Exists(outputFilename))
@@ -389,10 +441,72 @@ public class AssetBundler
         File.WriteAllText(outputFolder + "/modInfo.json", ModConfig.Instance.ToJson());
     }
 
-    protected void CreateModSettings()
+    /// <summary>
+    /// Copies the modSettings.json file from Assets to the OUTPUT_FOLDER.
+    /// </summary>
+    protected void CopyModSettings()
     {
-        File.Copy("Assets/modSettings.json", outputFolder + "/modSettings.json");
+        if(File.Exists("Assets/modSettings.json"))
+        {
+            File.Copy("Assets/modSettings.json", outputFolder + "/modSettings.json");
+        }
     }
+    /// <summary>
+    /// Copies PDF manual pages to Manual folder in OUTPUT_FOLDER to be used for manual combination
+    /// </summary>
+    protected void CopyManual()
+    {
+        if(Directory.Exists("Manual/pdfs"))
+        {
+            DirectoryCopyPDFs("Manual/pdfs", outputFolder + "/Manual", true);
+        }
+    }
+
+    /// <summary>
+    /// Helper method to copy directory
+    /// </summary>
+    private static void DirectoryCopyPDFs(string sourceDirName, string destDirName, bool copySubDirs)
+    {
+        // Get the subdirectories for the specified directory.
+        DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+        if (!dir.Exists)
+        {
+            throw new DirectoryNotFoundException(
+                "Source directory does not exist or could not be found: "
+                + sourceDirName);
+        }
+
+        DirectoryInfo[] dirs = dir.GetDirectories();
+        // If the destination directory doesn't exist, create it.
+        if (!Directory.Exists(destDirName))
+        {
+            Directory.CreateDirectory(destDirName);
+        }
+
+        // Get the files in the directory and copy them to the new location.
+        FileInfo[] files = dir.GetFiles();
+        foreach (FileInfo file in files)
+        {
+            string temppath = Path.Combine(destDirName, file.Name);
+            if(file.Extension.ToLower() == ".pdf")
+            {
+                file.CopyTo(temppath, false);
+            }
+            
+        }
+
+        // If copying subdirectories, copy them and their contents to new location.
+        if (copySubDirs)
+        {
+            foreach (DirectoryInfo subdir in dirs)
+            {
+                string temppath = Path.Combine(destDirName, subdir.Name);
+                DirectoryCopyPDFs(subdir.FullName, temppath, copySubDirs);
+            }
+        }
+    }
+
 
     /// <summary>
     /// All assets tagged with "mod.bundle" will be included in the build, including the Example assets. Print out a 
@@ -461,5 +575,57 @@ public class AssetBundler
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Sets material info for gameobjects that have a material to prevent possible future incompatibility
+    /// </summary>
+    protected void UpdateMaterialInfo()
+    {
+        List<string> supportedShaders = new List<string>
+            {
+                "Legacy Shaders/Diffuse", "Hidden/CubeBlur", "Hidden/CubeCopy", "Hidden/CubeBlend",
+                "UI/Default", "UI/Default Font", "Mobile/Diffuse", "Unlit/Transparent",
+                "Unlit/Transparent Cutout", "Unlit/Color", "Mobile/Unlit (Supports Lightmap)", "Unlit/Texture",
+                "KT/Blend Lit and Unlit", "KT/Blend Lit and Unlit Vertex Color", "KT/Blend Unlit", "GUI/KT 3D Text",
+                "KT/Mobile/Diffuse", "KT/Mobile/DiffuseTint", "KT/Transparent/Mobile Diffuse Underlay200", "KT/Unlit/TexturedLightmap",
+                "KT/Unlit/TransparentVertexColorUnderlay30", "KT/Outline"
+            };
+
+        string[] prefabsGUIDs = AssetDatabase.FindAssets("t: prefab");
+        foreach(string prefabGUID in prefabsGUIDs)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(prefabGUID);
+            GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if(go == null)
+            {
+                continue;
+            }
+            foreach(Renderer renderer in go.GetComponentsInChildren<Renderer>())
+            {
+                if(renderer.sharedMaterials != null && renderer.sharedMaterials.Length > 0)
+                {
+                    if(renderer.gameObject.GetComponent<KMMaterialInfo>() == null)
+                    {
+                        renderer.gameObject.AddComponent<KMMaterialInfo>();
+                    }
+                    KMMaterialInfo materialInfo = renderer.gameObject.GetComponent<KMMaterialInfo>();
+                    materialInfo.ShaderNames = new List<string>();
+                    foreach(Material material in renderer.sharedMaterials)
+                    {
+                        materialInfo.ShaderNames.Add(material.shader.name);
+
+                        if(material.shader.name == "Standard")
+                        {
+                            Debug.LogWarning(string.Format("Use of Standard shader in object {0}. Standard shader should be avoided as it will cause your mod to break in future versions of the game.", renderer.gameObject));
+                        }
+                        else if(!supportedShaders.Contains(material.shader.name))
+                        {
+                            Debug.LogWarning(string.Format("Use of custom shader {0} in object {1}. Use of custom shaders will break mod compatibility on game update requiring rebuild. Recommend using only supported shaders.", material.shader.name, renderer.gameObject));
+                        }
+                    }
+                }
+            }
+        }
     }
 }
