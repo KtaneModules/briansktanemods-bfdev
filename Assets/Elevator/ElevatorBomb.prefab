@@ -924,6 +924,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013617825954
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013938778110}
+  m_Layer: 0
+  m_Name: TimerSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013625383214
 GameObject:
   m_ObjectHideFlags: 1
@@ -2038,6 +2053,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013748840524}
   m_RootOrder: 4
+--- !u!4 &4000013938778110
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013617825954}
+  m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 0.58880544, y: 1.0545797, z: 1.3544307}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014269857700}
+  m_RootOrder: 3
 --- !u!4 &4000014145674284
 Transform:
   m_ObjectHideFlags: 1
@@ -2124,6 +2152,7 @@ Transform:
   - {fileID: 4000013748840524}
   - {fileID: 4000011867322050}
   - {fileID: 4000014211608234}
+  - {fileID: 4000013938778110}
   m_Father: {fileID: 4000010864964830}
   m_RootOrder: 0
 --- !u!23 &23000010068871002
@@ -2626,5 +2655,7 @@ MonoBehaviour:
   - {fileID: 4000010122172718}
   - {fileID: 4000011909162782}
   - {fileID: 4000010942372152}
-  TimerAnchors: []
+  - {fileID: 4000013938778110}
+  TimerAnchors:
+  - {fileID: 4000013938778110}
   Backings: []
