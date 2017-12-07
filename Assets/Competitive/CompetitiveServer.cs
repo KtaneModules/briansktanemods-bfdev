@@ -16,7 +16,7 @@ public class CompetitiveServer : MonoBehaviour
     public Settings ModSettings;
 
     Thread workerThread;
-
+    Worker workerObject;
     Queue<Action> actions;
 
     public class Settings
@@ -59,7 +59,7 @@ public class CompetitiveServer : MonoBehaviour
         GetComponent<KMGameInfo>().OnStateChange += OnGameStateChange;
         bombState = "NA";
         // Create the thread object. This does not start the thread.
-        Worker workerObject = new Worker(this);
+        workerObject = new Worker(this);
         workerThread = new Thread(workerObject.DoWork);
         // Start the worker thread.
         workerThread.Start(this);
@@ -89,19 +89,12 @@ public class CompetitiveServer : MonoBehaviour
     void OnDestroy()
     {
         workerThread.Abort();
+        workerObject.Stop();
     }
 
     // This example requires the System and System.Net namespaces.
-    public void SimpleListenerExample(string[] prefixes)
+    public void SimpleListenerExample(HttpListener listener)
     {
-        // Create a listener.
-        HttpListener listener = new HttpListener();
-        // Add the prefixes.
-        foreach (string s in prefixes)
-        {
-            listener.Prefixes.Add(s);
-        }
-        listener.Start();
         while (true)
         {
             // Note: The GetContext method blocks while waiting for a request. 
@@ -187,6 +180,7 @@ public class CompetitiveServer : MonoBehaviour
     public class Worker
     {
         CompetitiveServer service;
+        HttpListener listener;
 
         public Worker(CompetitiveServer s)
         {
@@ -196,7 +190,21 @@ public class CompetitiveServer : MonoBehaviour
         // This method will be called when the thread is started. 
         public void DoWork()
         {
-            service.SimpleListenerExample(new string[] { "http://*:" + service.ModSettings.Port + "/"});
+            // Create a listener.
+            listener = new HttpListener();
+            // Add the prefixes.
+            foreach (string s in new string[] { "http://*:" + service.ModSettings.Port + "/" })
+            {
+                listener.Prefixes.Add(s);
+            }
+            listener.Start();
+
+            service.SimpleListenerExample(listener);
+        }
+
+        public void Stop()
+        {
+            listener.Stop();
         }
     }
 }
