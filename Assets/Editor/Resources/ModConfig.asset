@@ -13,5 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: DoubleDeckerBomb
   title: The Double Decker
-  version: 0.2
-  outputFolder: C:\Users\brianfetter\dev\ktane\mods
+  description: "This terrifying bomb supports up to 23 modules.\r\n\r\nCan it be defused?\r\n\r\nShould
+    you even try?\r\n\r\nI don't really know."
+  version: 0.3
+  outputFolder: C:\Program Files (x86)\Steam\steamapps\common\Keep Talking and Nobody
+    Explodes\mods
+  previewImage: {fileID: 2800000, guid: 83c3ce32d2f25fd428c4e493cad11b68, type: 3}
