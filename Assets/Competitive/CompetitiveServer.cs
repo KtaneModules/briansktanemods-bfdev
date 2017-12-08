@@ -48,8 +48,9 @@ public class CompetitiveServer : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
+        GetComponent<KMModSettings>().RefreshSettings();
         ModSettings = JsonConvert.DeserializeObject<Settings>(GetComponent<KMModSettings>().Settings);
         actions = new Queue<Action>();
         bombInfo = GetComponent<KMBombInfo>();

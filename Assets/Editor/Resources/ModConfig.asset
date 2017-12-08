@@ -13,5 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: CompetitiveMode
   title: Competitive Mode
-  version: 0.2
-  outputFolder: build
+  description: "This mod adds a webserver to start missions simultaneously on multiple
+    computers and get information on their status.\r\n\r\nYou can find a sample admin
+    page for running the game with two teams here:\r\n\r\nhttp://bfdev.github.io/Competitive/CompetitiveAdmin.zip\r\n\r\nAfter
+    extracting to a folder you can index.html and specify the IP and port of the computers
+    running the game.\r\n\r\nFeel free to make any changes to this Admin page that
+    you might need."
+  version: 0.3
+  outputFolder: C:\Users\brianfetter\dev\ktane\mods
+  previewImage: {fileID: 2800000, guid: ca469ae7372dd0e468637f669bae798b, type: 3}
